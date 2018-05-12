@@ -17,6 +17,7 @@ class CreateCartDrycleaningTable extends Migration
             $table->increments('id');
             $table->integer('cart_id');
             $table->integer('drycleaning_id');
+            $table->integer('q_drycleaning_id')->unsigned();;
             $table->timestamps();
         });
     }

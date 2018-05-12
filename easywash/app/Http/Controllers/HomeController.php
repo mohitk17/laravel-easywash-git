@@ -32,7 +32,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-      $services = DB::table('services')->paginate(2);
+      $services = DB::table('services')->paginate(6);
       return view('user.home')->with('services', $services)->with('categories', Category::all())->with('$workingday', Workingday::all());
 
         // return view('home');

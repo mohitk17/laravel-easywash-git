@@ -37,6 +37,8 @@
 </head>
 
 <body>
+<div id="app" >
+
 
 
 <div class="wrapper">
@@ -62,10 +64,9 @@
                         <li><a href="contact-us-2.html">FAQs</a></li>
                         <li><a href="contact-us-2.html">Contact</a></li>
 
-                        <li  class="nav-icon nav-divider">
-                            <a href="javascript:void(0)">|</a>
+                  
+                        <li class="nav-divider" aria-hidden="true"><a href="javascript:void(0)">|</a>
                         </li>
-
                         @auth
 
                         <li class="active">
@@ -87,7 +88,7 @@
                                 @endauth
                             <!-- </ul> -->
 
-                        <li  class="nav-icon cart-info">
+                        <!-- <li  class="nav-icon cart-info">
                             <a href="javascript:void(0)">
                                 <i class="fa fa-shopping-cart"></i> cart(2)
                             </a>
@@ -95,7 +96,7 @@
                                 <div class="megamenu-row">
                                     <div class="col12">
 
-                                        <!--cart-->
+
                                         <table class="table cart-table-list table-responsive">
                                             <tr>
                                                 <td><a href="#"><img src=" {{asset('app/img/product/1.jpg')}}" alt=""/></a></td>
@@ -123,12 +124,12 @@
                                             <a href="shop-cart.html" class="btn btn-small btn-theme-color light-hover"> View cart</a>
                                             <a href="#" class="btn btn-small btn-light-solid  btn-transparent"> Checkout</a>
                                         </div>
-                                        <!--cart-->
+
 
                                     </div>
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
                     <!--mega menu end-->
 
@@ -140,5 +141,7 @@
     <!--header end-->
     @yield('content')
 </div>
+</div>
+
   </body>
 </html>

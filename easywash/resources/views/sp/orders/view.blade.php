@@ -87,6 +87,31 @@
               </div>
           </div>
       </div>
+      <section id="description" class="card">
+      <div class="card-header">
+          <h4 class="card-title">Customer Details:</h4>
+      </div>
+      <div class="card-body collapse in">
+          <div class="card-block">
+              <div class="card-text">
+                <dl class="row">
+                    <dt class="col-sm-3">Customer ID:</dt>
+                    <dd class="col-sm-9">#{{$cart->user_id}}</dd>
+                    <dt class="col-sm-3">Customer Name:</dt>
+                    <dd class="col-sm-9"></dd>
+                    <dt class="col-sm-3">Customer Email ID:</dt>
+                    <dd class="col-sm-9"></dd>
+                    <dt class="col-sm-3">Customer Address:</dt>
+                    <dd class="col-sm-9"></dd>
+
+
+
+                </dl>
+
+                  </div>
+          </div>
+      </div>
+      </section>
 
 
 <section id="" class="card">

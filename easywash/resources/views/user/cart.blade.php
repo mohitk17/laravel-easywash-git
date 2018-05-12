@@ -89,10 +89,31 @@
                                                                 <h3>Wash and Fold</h3>
                                                                 <p>Note: If you have both wash & fold and dry cleaning, please separate the two into different laundry bags. <br>
                                                                   The cleaner will update your bill after weighing your bag.</p>
-                                                                <div class="form-group">
-                                                                    <label>Enter laundry weigh estimate:</label>
-                                                                    <input type="text" class="form-control" placeholder="lbs" name="laundry_weight">
-                                                                </div>
+                                                                  <div>
+                                                                    <label><input type="radio" name="washandfold" value="none"> None </label>
+                                                                    <label><input type="radio" name="washandfold" value="itemize"> Regular Laundry </label>
+                                                                  </div>
+                                                                  <div style=" display:none;" class="none box"></div>
+                                                                  <div style=" display:none;" class="itemize box">
+
+                                                                      <div class="form-group ">
+                                                                          <label for="drycleaning_id">Please enter quantity</label><br>
+                                                                          <table class="table">
+                                                                            <tr><td class="">Regular Laundry (Clothes):</td><td><input  type="text" placeholder="lbs" name="q_Regular_Laundry" value=""></td>
+                                                                            </tr>
+                                                                            <tr><td class="">Bedding Comforter:</td><td><input placeholder="Quantity" type="text" name="q_Bedding_Comforter_laundry" value=""></td>
+                                                                            <td class="">Bedding Blanket Throw:</td><td><input placeholder="Quantity" type="text" name="q_Bedding_Blanket_Throw" value=""></td>
+                                                                                <td class="">Bedding Pillow:</td><td><input placeholder="Quantity" type="text" name="q_Bedding_Pillow_laundry" value=""></td>
+                                                                            </tr>
+
+                                                                            <tr>
+                                                                              <td class="">Bedding Mattress Duvet Cover:</td><td><input placeholder="Quantity" type="text" name="q_Bedding_Mattress_Duvet_Cover" value=""></td>
+                                                                              <td class="">Bath Mat:</td><td><input placeholder="Quantity" type="text" name="q_Bath_Mat_laundry" value=""></td>
+                                                                              <td class="">Every Hang Dry Item:</td><td><input placeholder="Quantity" type="text" name="q_Every_Hang_Dry_Item" value=""></td>
+                                                                            </tr>
+                                                                          </table>
+                                                                      </div>
+                                                                  </div>
                                                                 <ul class="list-inline pull-right">
                                                                     <li><button type="button" class="btn btn-default next-step">Next</button></li>
                                                                 </ul>
@@ -103,19 +124,95 @@
                                                                 <p>Note: If you have both wash & fold and dry cleaning, please separate the two into different laundry bags. <br> The cleaner will update your bill after pickup</p>
                                                                 <div>
                                                                   <label><input type="radio" name="dryclean" value="none"> None </label>
-                                                                  <label><input type="radio" name="dryclean" value="entire"> Entire Load </label>
                                                                   <label><input type="radio" name="dryclean" value="itemize"> Itemize</label><br>
                                                                 </div>
                                                                 <div style=" display:none;" class="none box"></div>
-                                                                <div style=" display:none;" class="entire box"></div>
+
                                                                 <div style=" display:none;" class="itemize box">
                                                                   <div class="form-group ">
                                                                       <label for="drycleaning_id">Select Clothes Items</label><br>
-                                                                      @foreach($drycleaning as $drycleaning)
-                                                                      <div class="checkbox" >
-                                                                        <label><input type="checkbox" name="drycleaning_id[]" value="{{$drycleaning->id}}">{{$drycleaning->name}}</label>
-                                                                      </div>
-                                                                    @endforeach
+                                                                      <table class="table">
+                                                                        <tr><td class="">Sweater:</td><td><input placeholder="Quantity" type="text" name="q_Dress" value=""></td>
+                                                                            <td class="">Shirt:</td><td><input placeholder="Quantity" type="text" name="q_Shirt" value=""></td>
+                                                                            <td class="">Sweater:</td><td><input placeholder="Quantity" type="text" name="q_Sweater" value=""></td>
+                                                                        </tr>
+
+                                                                        <tr><td class="">Dress Childrens:</td><td><input placeholder="Quantity" type="text" name="q_Dress_Childrens" value=""></td>
+                                                                            <td class="">Skirt:</td><td><input placeholder="Quantity" type="text" name="q_Skirt" value=""></td>
+                                                                            <td class="">Tie:</td><td><input placeholder="Quantity" type="text" name="q_Tie" value=""></td></tr>
+
+                                                                        <tr><td class="">Shorts:</td><td><input placeholder="Quantity" type="text" name="q_Shorts" value=""></td>
+                                                                            <td class="">Jumpsuit:</td><td><input placeholder="Quantity" type="text" name="q_Jumpsuit" value=""></td>
+                                                                            <td class="">Gown:</td><td><input placeholder="Quantity" type="text" name="q_Gown" value=""></td></tr>
+
+                                                                        <tr><td class="">Mittens:</td><td><input placeholder="Quantity" type="text" name="q_Mittens" value=""></td>
+                                                                            <td class="">Leggings:</td><td><input placeholder="Quantity" type="text" name="q_Leggings" value=""></td>
+                                                                            <td class="">Bath Mat dry clean:</td><td><input placeholder="Quantity" type="text" name="q_Bath_Mat_dry_clean" value=""></td></tr>
+
+                                                                            <tr><td class="">Jacket Down:</td><td><input placeholder="Quantity" type="text" name="q_Jacket_Down" value=""></td>
+                                                                                <td class="">Nightgown:</td><td><input placeholder="Quantity" type="text" name="q_Nightgown" value=""></td>
+                                                                                <td class="">Cummerbund:</td><td><input placeholder="Quantity" type="text" name="q_Cummerbund" value=""></td></tr>
+
+                                                                                <tr><td class="">Bathing suit one piece:</td><td><input placeholder="Quantity" type="text" name="q_Bathing_suit_one_piece" value=""></td>
+                                                                                    <td class="">Bathing suit Bottom:</td><td><input placeholder="Quantity" type="text" name="q_Bathing_suit_Bottom" value=""></td>
+                                                                                    <td class="">Cardigan:</td><td><input placeholder="Quantity" type="text" name="q_Cardigan" value=""></td></tr>
+
+                                                                              <tr><td class="">Tank Top:</td><td><input placeholder="Quantity" type="text" name="q_Tank_Top" value=""></td>
+                                                                                  <td class="">Tablecloth:</td><td><input placeholder="Quantity" type="text" name="q_Tablecloth" value=""></td>
+                                                                                  <td class="">Robe:</td><td><input placeholder="Quantity" type="text" name="q_Robe" value=""></td></tr>
+
+                                                                                  <tr><td class="">Curtains Light:</td><td><input placeholder="Quantity" type="text" name="q_Curtains_Light" value=""></td>
+                                                                                      <td class="">Coat Pea Coat:</td><td><input placeholder="Quantity" type="text" name="q_Coat_Pea_Coat" value=""></td>
+                                                                                      <td class="">Coat Overcoat:</td><td><input placeholder="Quantity" type="text" name="q_Coat_Overcoat" value=""></td></tr>
+
+                                                                                      <tr><td class="">2 Piece Suit:</td><td><input placeholder="Quantity" type="text" name="q_two_Piece_Suit" value=""></td>
+                                                                                          <td class="">Romper:</td><td><input placeholder="Quantity" type="text" name="q_Romper" value=""></td>
+                                                                                          <td class="">Cushion Cover:</td><td><input placeholder="Quantity" type="text" name="q_Cushion_Cover" value=""></td></tr>
+
+                                                                                          <tr><td class="">Blouse:</td><td><input placeholder="Quantity" type="text" name="q_Blouse" value=""></td>
+                                                                                              <td class="">Cocktail Dress:</td><td><input placeholder="Quantity" type="text" name="q_Cocktail_Dress" value=""></td>
+                                                                                              <td class="">Pants:</td><td><input placeholder="Quantity" type="text" name="q_Pants" value=""></td></tr>
+
+
+                                                                                              <tr><td class="">Jeans:</td><td><input placeholder="Quantity" type="text" name="q_Jeans" value=""></td>
+                                                                                                  <td class="">Suit Jacket:</td><td><input placeholder="Quantity" type="text" name="q_Suit_Jacket" value=""></td>
+                                                                                                  <td class="">Scarf:</td><td><input placeholder="Quantity" type="text" name="q_Scarf" value=""></td></tr>
+
+                                                                                                  <tr><td class="">Polo Sport Shirt:</td><td><input placeholder="Quantity" type="text" name="q_Polo_Sport_Shirt" value=""></td>
+                                                                                                      <td class="">Vest:</td><td><input placeholder="Quantity" type="text" name="q_Vest" value=""></td>
+                                                                                                      <td class="">Gloves:</td><td><input placeholder="Quantity" type="text" name="q_Gloves" value=""></td></tr>
+
+                                                                                                      <tr><td class="">Shawl:</td><td><input placeholder="Quantity" type="text" name="q_Shawl" value=""></td>
+                                                                                                          <td class="">Napkins:</td><td><input placeholder="Quantity" type="text" name="q_Napkins" value=""></td>
+                                                                                                          <td class="">Lab Coat:</td><td><input placeholder="Quantity" type="text" name="q_Lab_Coat" value=""></td></tr>
+
+                                                                                                          <tr><td class="">Sweatshirt:</td><td><input placeholder="Quantity" type="text" name="q_Sweatshirt" value=""></td>
+                                                                                                              <td class="">Overalls:</td><td><input placeholder="Quantity" type="text" name="q_Overalls" value=""></td>
+                                                                                                              <td class="">Tuxedo:</td><td><input placeholder="Quantity" type="text" name="q_Tuxedo" value=""></td></tr>
+
+                                                                                                              <tr><td class="">Jersey:</td><td><input placeholder="Quantity" type="text" name="q_Jersey" value=""></td>
+                                                                                                                  <td class="">Hoodie:</td><td><input placeholder="Quantity" type="text" name="q_Hoodie" value=""></td>
+                                                                                                                  <td class="">Bra:</td><td><input placeholder="Quantity" type="text" name="q_Bra" value=""></td></tr>
+
+                                                                                                                  <tr><td class="">Belt:</td><td><input placeholder="Quantity" type="text" name="q_Belt" value=""></td>
+                                                                                                                      <td class="">Jacket:</td><td><input placeholder="Quantity" type="text" name="q_Jacket" value=""></td>
+                                                                                                                      <td class="">Coat:</td><td><input placeholder="Quantity" type="text" name="q_Coat" value=""></td></tr>
+
+                                                                                                                      <tr><td class="">Coat 3/4 Coat:</td><td><input placeholder="Quantity" type="text" name="q_Coat_3_4_Coat" value=""></td>
+                                                                                                                          <td class="">Coat Down:</td><td><input placeholder="Quantity" type="text" name="q_Coat_Down" value=""></td>
+                                                                                                                          <td class="">2 Piece Skirt Suit:</td><td><input placeholder="Quantity" type="text" name="q_two_Piece_Skirt_Suit" value=""></td></tr>
+
+                                                                                                                          <tr><td class="">Bedding Pillow Case:</td><td><input placeholder="Quantity" type="text" name="q_Bedding_Pillow_Case" value=""></td>
+                                                                                                                              <td class="">Bedding Blanket:</td><td><input placeholder="Quantity" type="text" name="q_Bedding_Blanket" value=""></td>
+                                                                                                                              <td class="">Bedding Bed Sheet:</td><td><input placeholder="Quantity" type="text" name="q_Bedding_Bed_Sheet" value=""></td></tr>
+
+                                                                                                                              <tr><td class="">Bedding Pillow:</td><td><input placeholder="Quantity" type="text" name="q_Bedding_Pillow_dry_clean" value=""></td>
+                                                                                                                                  <td class="">Bathing suit Top:</td><td><input placeholder="Quantity" type="text" name="q_Bathing_suit_Top" value=""></td>
+                                                                                                                                  <td class="">Bedding Down Comforter:</td><td><input placeholder="Quantity" type="text" name="q_Bedding_Down_Comforter" value=""></td></tr>
+
+                                                                                                                                  <tr><td class="">Bedding Comforter:</td><td><input placeholder="Quantity" type="text" name="q_Bedding_Comforter_dry_clean" value=""></td>
+                                                                                                                                      </tr>
+                                                                                                                                    </table>
                                                                   </div>
                                                                 </div>
                                                                 <br>
@@ -126,21 +223,37 @@
                                                               </div>
 
                                                               <div class="tab-pane " role="tabpanel" id="step3">
+
                                                                 <h3>Tailoring Services</h3>
+                                                                <div>
+                                                                  <label><input type="radio" name="tailoring" value="none"> None </label>
+                                                                  <label><input type="radio" name="tailoring" value="itemize"> Itemize</label><br>
+                                                                </div>
+                                                                <div style=" display:none;" class="none box"></div>
+                                                                <div style=" display:none;" class="itemize box">
                                                                 <div class="form-group ">
                                                                     <label for="tailoring_id">Select Tailoring Services</label><br>
-                                                                    @foreach($tailoring as $tailoring)
-                                                                    <div class="checkbox" >
-                                                                      <label><input type="checkbox" name="tailoring_id[]" value="{{$tailoring->id}}">{{$tailoring->name}}</label>
-                                                                    </div>
-                                                                  @endforeach
+                                                                    <table class="table">
+                                                                      <tr><td class="">Hemming:</td><td><input placeholder="Quantity" type="text" name="q_Hemming" value=""></td>
+                                                                          <td class="">Hemming_Pant:</td><td><input placeholder="Quantity" type="text" name="q_Hemming_Pant" value=""></td>
+                                                                          <td class="">Hemming_Sleeve:</td><td><input placeholder="Quantity" type="text" name="q_Hemming_Sleeve" value=""></td>
+                                                                      </tr>
+                                                                      <tr><td class="">Taper:</td><td><input placeholder="Quantity" type="text" name="q_Taper" value=""></td>
+                                                                          <td class="">Button:</td><td><input placeholder="Quantity" type="text" name="q_Button" value=""></td>
+                                                                          <td class="">Patch:</td><td><input placeholder="Quantity" type="text" name="q_Patch" value=""></td>
+                                                                      </tr>
+                                                                      <tr><td class="">Zipper:</td><td><input placeholder="Quantity" type="text" name="q_Zipper" value=""></td>
+                                                                      </tr>
+
+                                                                    </table>
                                                                 </div>
-                                                                <br>
-                                                                <ul class="list-inline pull-right">
-                                                                  <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                                                                  <li><button type="button" class="btn btn-default next-step">Next</button></li>
-                                                                </ul>
                                                               </div>
+                                                              <br>
+                                                              <ul class="list-inline pull-right">
+                                                                <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                                                                <li><button type="button" class="btn btn-default next-step">Next</button></li>
+                                                              </ul>
+                                                            </div>
 
                                                               <div class="tab-pane " role="tabpanel" id="complete">
                                                                 <h1>Select Date</h1>
@@ -655,7 +768,24 @@ $(document).ready(function(){
 </script>
 
 
+<script type="text/javascript">
+$(document).on('click', '.number-spinner button', function () {
+var btn = $(this),
+  oldValue = btn.closest('.number-spinner').find('input').val().trim(),
+  newVal = 0;
 
+if (btn.attr('data-dir') == 'up') {
+  newVal = parseInt(oldValue) + 1;
+} else {
+  if (oldValue > 1) {
+    newVal = parseInt(oldValue) - 1;
+  } else {
+    newVal = 1;
+  }
+}
+btn.closest('.number-spinner').find('input').val(newVal);
+});
+</script>
 
 
 

@@ -23,105 +23,36 @@
 
     <!--body content start-->
     <section class="body-content ">
-
         <div class="page-content">
             <div class="container">
                 <div class="row">
-                  <!-- INFO  -->
                   <div class="col-md-12">
-                    <!-- @foreach( $services as $service )
-                          <div class="table-responsive">
-                            <table class="table cart-table">
-                              <tr>
-                                <td class="col-md-3">
-                                    <img src="{{$service->featured}}" alt="Logo" width="200px" height="200px" class="img-responsive" />
-                                </td>
-                                <td class="col-md-9">
-                                  <div class=" text-left">
-                                    <h3 class="text-uppercase">{{$service->name}} {{$service->id}}</h3>
-                                    <span class="text-uppercase">{{$service->address}} {{$service->city}} {{$service->state}}.{{$service->zipcode}}</span><br>
-                                    @for ($i=1; $i <= 5 ; $i++)
-                                      <p class="fa fa-star{{ ($i <= $avg_rating) ? '' : '-o'}}"></p>
-                                    @endfor
-                                    (<strong class="number-item">{{$avg_rating}}</strong>  /&nbsp5)
-                                  </div>
-                                </td>
-                              </tr>
-                            </table>
-                          </div>
-                    @endforeach -->
-                      <!--INFO ENDS -->
-
-
-                              <!-- accordion 2 start-->
                               <dl class="accordion">
-
                                   @foreach( $carts as $cart )
                                     <dt>
                                       <a href="">Order ID :{{$cart->id}} Requested Pickup:{{$cart->dos}}</a>
                                     </dt>
                                     <dd>
-
-                                    <div class="row">
-                                    <div class="col-md-6">
-                                      <h4>Service Shop Details: <a href="{{ route('user.home.details', ['id' => $service->sp_id , 'service_id' => $service->id] )}}" class="btn btn-small btn-dark-border  "><i class="fa fa-paper-plane-o"></i> Shop #:{{$cart->service_id}}</a></h4>
-                                    </div>
-                                    <div class="col-md-6">
-                                      <h4>Order Details: <a href="{{ route('user.orderdetails', ['id' => $service->sp_id , 'service_id' => $service->id, 'cart_id' => $cart->id ] )}}" class="btn btn-small btn-dark-border  "><i class="fa fa-paper-plane-o"></i> Order #:{{$cart->id}}</a></h4>
-                                    </div>
-                                   </div>
-
-                                      <!-- <h4>Order id:{{$cart->id}}</h4>
-                                      <h4>Order details</h4>
-                                      <a href="{{ route('user.orderdetails', ['id' => $service->sp_id , 'service_id' => $service->id, 'cart_id' => $cart->id ] )}}"> Order details
-                                      Shop ID : {{$cart->service_id}}
-                                      </a>
-                                      <h4>Wash and fold Weight:
-                                      @if (is_null($cart->laundry_weight))
-                                        No laundry service requested
-                                      @else
-                                        {{$cart->laundry_weight}} pounds
-                                      @endif
-                                    </h4>
-
-                                    <h4>Dry clean:
-
-                                    @if ($cart->dryclean == "none")
-                                        No dry clean service requested
-                                    @elseif ($cart->dryclean == "entire")
-                                        Whole bag will be dry cleaned
-                                    @else
-                                        Dry cleaning requested for following items:<br>
-
-                                    @endif
-                                  </h4> -->
-
+                                        <div class="row">
+                                          @foreach($services as $service)
+                                          <div class="col-md-6">
+                                            <h4>Service Shop Details: <a href="{{ route('user.home.details', ['id' => $service->sp_id , 'service_id' => $service->id] )}}" class="btn btn-small btn-dark-border  "><i class="fa fa-paper-plane-o"></i> Shop #:{{$cart->service_id}}</a></h4>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <h4>Order Details: <a href="{{ route('user.orderdetails', ['id' => $service->sp_id , 'service_id' => $service->id, 'cart_id' => $cart->id ] )}}" class="btn btn-small btn-dark-border  "><i class="fa fa-paper-plane-o"></i> Order #:{{$cart->id}}</a></h4>
+                                          </div>
+                                          @endforeach
+                                        </div>
                                     </dd>
-
                                     @endforeach
                               </dl>
-                              <!-- accordion 2 end -->
-
-                              <!-- <ul class="portfolio-meta m-bot-30 pull-right">
-                                  <li><span> Sub Total </span> $ 2404.00</li>
-                                  <li><span> Eco Tax (-2.00)	 </span>  $ 40.00 </li>
-                                  <li><span> VAT (20%) </span> $ 498.00 </li>
-                                  <li><span><strong class="cart-total"> Total </strong></span> <strong class="cart-total">$ 2830.00 </strong></li>
-                              </ul> -->
-
                               <div class="cart-btn-row inline-block">
-                                <button type="submit" class="btn btn-medium btn-dark-solid pull-right" name="button"><i class="fa fa-shopping-cart"></i>Place Request</button>
-
-                                  <!-- <a href="#" class="btn btn-medium btn-dark-solid btn-transparent  pull-right">  Continue Shopping </a> -->
+                              <button type="submit" class="btn btn-medium btn-dark-solid pull-right" name="button"><i class="fa fa-shopping-cart"></i>Place Request</button>
                               </div>
-  </form>
-
-
                     </div>
                 </div>
             </div>
         </div>
-
   </section>
     <!--body content end-->
 

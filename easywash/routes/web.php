@@ -1,5 +1,7 @@
 <?php
 
+
+use App\Events\OrderStatusChanged;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,18 +17,36 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/fire', function () {
+event(new OrderStatusChanged);
+    return 'Fired';
+});
+
 // Route::get('/user/home', function () {
 //     return view('user.home');
 // });
+
+
 Route::get('/user/home', ['uses' => 'HomeController@index','as' =>'user.home']);
 Route::get('/user/home/{cid}', ['uses' => 'HomeController@categoryindex','as' =>'user.home.categoryindex']);
 
 Route::get('/user/home/details/{id}/{service_id}', ['uses' => 'HomeController@details','as' =>'user.home.details']);
+
 Route::post('/user/home/details/{id}/{service_id}', ['uses' => 'HomeController@comment','as' =>'user.home.details.comment']);
 
 Route::get('/user/home/cart/{id}/{service_id}', ['uses' => 'CartController@index','as' =>'user.cart']);
-Route::post('/user/home/cart/orders/{id}/{service_id}', ['uses' => 'CartController@store','as' =>'user.cart.store']);
-//
+Route::post('/user/home/cart/{id}/{service_id}', ['uses' => 'CartController@store','as' =>'user.cart.store']);
+
+Route::get('/user/home/cart/success/{id}/{service_id}', ['uses' => 'CartController@index1','as' =>'user.cart1']);
+
+
+
+Route::get('/user/home/cart/cartreview/{id}/{service_id}/{cart_id}', ['uses' => 'CartController@cartreview','as' =>'user.cartreview']);
+
+Route::get('/user/home/cart/checkout', ['uses' => 'CartController@checkout','as' =>'user.checkout']);
+Route::post('/user/home/cart/checkout', ['uses' => 'CartController@pay','as' =>'user.checkout']);
+
+
 Route::get('/user/home/cart/orders/{id}/{service_id}', ['uses' => 'CartController@orders','as' =>'user.orders']);
 Route::get('/user/home/cart/orderdetails/{id}/{service_id}/{cart_id}', ['uses' => 'CartController@orderdetails','as' =>'user.orderdetails']);
 
@@ -122,6 +142,8 @@ Route::post('/sp/prices/update/{id}', ['uses' => 'PricingController@update','as'
 Route::get('/sp/orders', ['uses' => 'OrderController@index','as' =>'sp.orders.index']);
 Route::get('/sp/orders/view/{id}/{service_id}/{sp_id}', ['uses' => 'OrderController@view','as' =>'sp.orders.view']);
 Route::get('/sp/orders/bill/{id}/{service_id}/{sp_id}', ['uses' => 'OrderController@bill','as' =>'sp.orders.bill']);
+Route::post('/sp/orders/billdetails/store/{id}/{service_id}/{sp_id}', ['uses' => 'OrderController@store','as' =>'sp.orders.bill.store']);
+Route::post('/sp/orders/billdetails/update/{id}/{service_id}/{sp_id}', ['uses' => 'OrderController@update','as' =>'sp.orders.bill.update']);
 
 Route::get('/test1',function(){ return App\Category::find(2)->services;});
 

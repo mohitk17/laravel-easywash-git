@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-textdirection="ltr" class="loading">
   <head>
+      <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -40,7 +41,7 @@
   </head>
 
   <body data-open="click" data-menu="vertical-menu" data-col="2-columns" class="vertical-layout vertical-menu 2-columns  fixed-navbar">
-    <div>
+    <div id="app">
     <!-- navbar-fixed-top-->
     <nav class="header-navbar navbar navbar-with-menu navbar-fixed-top navbar-light navbar-shadow">
       <div class="navbar-wrapper">

@@ -90,6 +90,7 @@
 
                                       <!-- wash and fold start -->
                                       <div class="row">
+
                                         <h5 class="text-uppercase">Wash and fold: </h5>
                                       </div>
                                         @if (is_null($cart->laundry_weight))
@@ -98,6 +99,7 @@
                                         </div>
                                         @else
                                         <div class="row">
+
                                           <div class=" col-md-12">
                                             <table class="table table-hover">
                                               <thead>
@@ -155,7 +157,12 @@
                                                         <b>(Quantity Pending){{$drycleaning->name}}</b><br>
                                                         </td>
                                                       <td class="col-md-3">X</td>
-                                                      <td class="col-md-3">Pending</td>
+                                                      <td class="col-md-3">
+
+
+                                                        $<b>{{ $prices->{ $drycleaning->display_name} }}</b>
+
+                                                    </td>
                                                       <td class="col-md-3">Pending</td>
                                                     </tr>
                                                     @endforeach

@@ -2,7 +2,7 @@
 
 
 @section('content')
-  <div class="wrapper">
+  <div id="app" class="wrapper">
           <!--hero section-->
           <div  class="full-banner  vertical-align banner-25 height-600">
               <div class="container-mid">
@@ -204,12 +204,12 @@
               <!--post-->
 
               <!--tabs-->
-              <div class="page-content tab-parallax">
+              <!-- <div class="page-content tab-parallax">
                   <div class="container">
                       <div class="row">
                           <div class="col-md-12">
 
-                              <!--tabs square start-->
+
                               <section class="icon-box-tabs ">
                                   <ul class="nav nav-pills">
                                       <li class="active">
@@ -281,13 +281,13 @@
                                       </div>
                                   </div>
                               </section>
-                              <!--tabs square end-->
+
 
                           </div>
 
                       </div>
                   </div>
-              </div>
+              </div> -->
               <!--tabs-->
 
 
@@ -296,7 +296,7 @@
               <!--team member-->
 
               <!--subscribe-->
-              <div class="subscribe-box gray-bg round-5 page-content text-center">
+              <!-- <div class="subscribe-box gray-bg round-5 page-content text-center">
                   <div class="container">
                       <div class="row">
                           <div class="col-md-8 col-md-offset-2">
@@ -315,7 +315,7 @@
                           </div>
                       </div>
                   </div>
-              </div>
+              </div> -->
               <!--subscribe-->
 
 
@@ -395,34 +395,33 @@
               <div class="primary-footer">
                   <div class="container">
                       <div class="row">
-                          <div class="col-md-3">
+                          <div class="col-md-4">
                               <a href="#" class="m-bot-20 footer-logo">
                                   <img class="retina" src=" {{asset('app/img/logo-dark.png')}}" alt=""/>
                               </a>
                               <p>Massive is  fully responsible, Performance oriented and SEO optimized theme.</p>
 
                           </div>
-                          <div class="col-md-3">
-                              <h5 class="text-uppercase">recent posts</h5>
+                          <div class="col-md-4">
+                              <h5 class="text-uppercase">EASYWASH</h5>
                               <ul class="f-list">
-                                  <li><a href="#">Standard Blog post</a></li>
-                                  <li><a href="#">Quotation post</a></li>
-                                  <li><a href="#">Audio Post</a></li>
-                                  <li><a href="#">Massive Video Demo</a></li>
-                                  <li><a href="#">Blog Image Post</a></li>
+                                  <li><a href="#">Home</a></li>
+                                  <li><a href="#">About us</a></li>
+                                  <li><a href="#">Our process</a></li>
+                                  <li><a href="#">FAQ</a></li>
+
                               </ul>
                           </div>
-                          <div class="col-md-3">
-                              <h5 class="text-uppercase">follow us</h5>
+                          <div class="col-md-4">
+                              <h5 class="text-uppercase">Contact us</h5>
                               <ul class="f-list">
-                                  <li><a href="#">About Massive</a></li>
-                                  <li><a href="#">Career</a></li>
+                                  <li><a href="#">Help</a></li>
                                   <li><a href="#">Terms & Condition</a></li>
                                   <li><a href="#">Privacy Policy</a></li>
-                                  <li><a href="#">Contact Us</a></li>
+                                  <li><a href="#">Contact Details</a></li>
                               </ul>
                           </div>
-                          <div class="col-md-3">
+                          <!-- <div class="col-md-3">
                               <h5 class="text-uppercase">Recent Work</h5>
                               <ul class="r-work">
                                   <li>
@@ -453,7 +452,7 @@
                                       <a href="#"><img src=" {{asset('app/img/recent-work/9.jpg')}}" alt=""/></a>
                                   </li>
                               </ul>
-                          </div>
+                          </div> -->
                       </div>
                   </div>
               </div>
@@ -462,15 +461,15 @@
                   <div class="container">
                       <div class="row">
                           <div class="col-md-6">
-                              <span class="m-top-10">Copyright 2012 - 2015 Massive Theme by <a href="#" class="f-link">ThemeBucket</a> | All Rights Reserved</span>
+                              <span class="m-top-10">Copyright 2018 <a href="#" class="f-link">Easywash</a> | All Rights Reserved</span>
                           </div>
                           <div class="col-md-6">
                               <div class="social-link circle pull-right">
                                   <a href="#"><i class="fa fa-facebook"></i></a>
                                   <a href="#"><i class="fa fa-twitter"></i></a>
-                                  <a href="#"><i class="fa fa-dribbble"></i></a>
+                                  <a href="#"><i class="fa fa-yelp"></i></a>
                                   <a href="#"><i class="fa fa-google-plus"></i></a>
-                                  <a href="#"><i class="fa fa-behance"></i></a>
+
                               </div>
                           </div>
                       </div>
@@ -482,8 +481,10 @@
 
 
       <!-- Placed js at the end of the document so the pages load faster -->
+
       <script src=" {{ asset('app/js/jquery-1.10.2.min.js') }}"></script>
       <script src=" {{ asset('app/js/bootstrap.min.js') }}"></script>
+      <script src=" {{ asset('app/js/bootstrap') }}"></script>
       <script src=" {{ asset('app/js/menuzord.js') }}"></script>
       <script src=" {{ asset('app/js/jquery.flexslider-min.js') }}"></script>
       <script src=" {{ asset('app/js/owl.carousel.min.js') }}"></script>
